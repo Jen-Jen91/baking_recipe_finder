@@ -2,8 +2,8 @@ package com.example.Recipes;
 
 import com.example.Recipes.models.Ingredient;
 import com.example.Recipes.models.Recipe;
-import com.example.Recipes.repositories.IngredientRepository;
-import com.example.Recipes.repositories.RecipeRepository;
+import com.example.Recipes.repositories.IngredientRepository.IngredientRepository;
+import com.example.Recipes.repositories.RecipeRepository.RecipeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
