@@ -1,9 +1,10 @@
 package com.example.Recipes.repositories.IngredientRepository;
 
 import com.example.Recipes.models.Ingredient;
+import com.example.Recipes.projections.IngredientProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
+@RepositoryRestResource(excerptProjection = IngredientProjection.class)
 public interface IngredientRepository extends JpaRepository<Ingredient, Long>, IngredientRepositoryCustom {
 }

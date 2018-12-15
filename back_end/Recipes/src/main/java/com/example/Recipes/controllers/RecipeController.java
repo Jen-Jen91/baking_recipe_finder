@@ -16,9 +16,5 @@ public class RecipeController {
     @Autowired
     RecipeRepository recipeRepository;
 
-    @GetMapping
-    public List<Recipe> getAllRecipes() {
-        return recipeRepository.findAll();
-    }
 
 }
