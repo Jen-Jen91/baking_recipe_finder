@@ -47,7 +47,7 @@ public class Recipe {
         this.instructions = instructions;
         this.image_url = image_url;
         this.time = time;
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredients = new ArrayList<>();
     }
 
     public Recipe() {
