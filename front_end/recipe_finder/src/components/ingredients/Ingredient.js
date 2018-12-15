@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
 const Ingredient = (props) => {
 
@@ -8,7 +9,9 @@ const Ingredient = (props) => {
 
   return(
     <Fragment>
-      <p>{props.ingredient.name}</p>
+      <Link to={"/ingredients/" + props.ingredient.id}>
+        {props.ingredient.name}
+      </Link>
     </Fragment>
   );
 
