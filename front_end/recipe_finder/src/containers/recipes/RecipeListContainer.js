@@ -13,7 +13,6 @@ class RecipeListContainer extends Component {
     let request = new Request();
     request.get('/recipes')
       .then((data) => {
-        console.log("Data:", data);
         this.setState({recipes: data._embedded.recipes})
       });
   }

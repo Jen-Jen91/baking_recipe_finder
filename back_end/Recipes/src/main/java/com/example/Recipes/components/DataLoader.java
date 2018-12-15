@@ -22,25 +22,25 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-        Ingredient nutella = new Ingredient("Nutella");
+        Ingredient nutella = new Ingredient("nutella");
         ingredientRepository.save(nutella);
 
-        Ingredient flour = new Ingredient("Flour");
+        Ingredient flour = new Ingredient("flour");
         ingredientRepository.save(flour);
 
-        Ingredient egg = new Ingredient("Egg");
+        Ingredient egg = new Ingredient("egg");
         ingredientRepository.save(egg);
 
-        Ingredient sugar = new Ingredient("Sugar");
+        Ingredient sugar = new Ingredient("sugar");
         ingredientRepository.save(sugar);
 
-        Ingredient peanutButter = new Ingredient("Peanut Butter");
+        Ingredient peanutButter = new Ingredient("peanut butter");
         ingredientRepository.save(peanutButter);
 
-        Ingredient butter = new Ingredient("Butter");
+        Ingredient butter = new Ingredient("butter");
         ingredientRepository.save(butter);
 
-        Ingredient chocolate = new Ingredient("Chocolate");
+        Ingredient chocolate = new Ingredient("chocolate");
         ingredientRepository.save(chocolate);
 
         Recipe recipe1 = new Recipe("Flourless Chocolate Cake", "Make cake", "cake.jpg", 40);
