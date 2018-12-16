@@ -13,11 +13,24 @@ const RecipeDetails = (props) => {
     </li>
   });
 
+  const fullInstructions = props.instructions.split("+");
+
+  const ingredientDetails = fullInstructions[0].split(":");
+  const ingredientList = ingredientDetails.map((ingredient, index) => {
+    return <li key={index}>{ingredient}</li>
+  });
+
+  const directions = fullInstructions[1].split(":");
+  const directionList = directions.map((direction, index) => {
+    return <li key={index}>{direction}</li>
+  });
+
   return(
     <Fragment>
       <p>Total Time: {props.recipe.time} minutes</p>
       <ul>{ingredients}</ul>
-      <p>{props.recipe.instructions}</p>
+      <ul>{ingredientList}</ul>
+      <ul>{directionList}</ul>
     </Fragment>
   );
 

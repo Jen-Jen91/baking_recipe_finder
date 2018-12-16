@@ -28,6 +28,7 @@ class SingleRecipeContainer extends Component {
         <RecipeDetails
           recipe={this.state.recipe}
           ingredients={this.state.recipe._embedded.ingredients}
+          instructions={this.state.recipe.instructions}
         />
       </Fragment>
     );

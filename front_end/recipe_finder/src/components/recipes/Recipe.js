@@ -13,7 +13,6 @@ const Recipe = (props) => {
         <h3>{props.recipe.name}</h3>
       </Link>
       <p>Total Time: {props.recipe.time} mins</p>
-      <p>{props.recipe.instructions}</p>
 
     </Fragment>
   );
