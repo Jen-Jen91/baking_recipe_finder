@@ -1,6 +1,7 @@
 package com.example.Recipes.components;
 
 import com.example.Recipes.models.Ingredient;
+import com.example.Recipes.models.InstructionType;
 import com.example.Recipes.models.Recipe;
 import com.example.Recipes.repositories.IngredientRepository.IngredientRepository;
 import com.example.Recipes.repositories.RecipeRepository.RecipeRepository;
@@ -70,22 +71,22 @@ public class DataLoader implements ApplicationRunner {
         Ingredient banana = new Ingredient("banana");
         ingredientRepository.save(banana);
 
-        Recipe recipe1 = new Recipe("Flourless Chocolate Cake", "Make cake", "cake.jpg", 40);
+        Recipe recipe1 = new Recipe("Flourless Chocolate Cake", InstructionType.FLOURLESS_CHOC_CAKE, "cake.jpg", 40);
         recipeRepository.save(recipe1);
 
-        Recipe recipe2 = new Recipe("Nutella Brownie", "Make brownies", "brownies.jpg", 30);
+        Recipe recipe2 = new Recipe("Nutella Brownie", InstructionType.NUTELLA_BROWNIE, "brownies.jpg", 30);
         recipeRepository.save(recipe2);
 
-        Recipe recipe3 = new Recipe("Peanut Butter Cookies", "Make cookies", "cookies.jpg", 25);
+        Recipe recipe3 = new Recipe("Peanut Butter Cookies", InstructionType.PEANUT_BUTTER_COOKIES, "cookies.jpg", 25);
         recipeRepository.save(recipe3);
 
-        Recipe recipe4 = new Recipe("Basic Muffins", "Make muffins", "muffins.jpg", 55);
+        Recipe recipe4 = new Recipe("Basic Muffins", InstructionType.BASIC_MUFFINS, "muffins.jpg", 55);
         recipeRepository.save(recipe4);
 
-        Recipe recipe5 = new Recipe("Classic Victoria Sandwich", "Make cake", "victoria.jpg", 40);
+        Recipe recipe5 = new Recipe("Classic Victoria Sandwich", InstructionType.VICTORIA_SANDWICH, "victoria.jpg", 40);
         recipeRepository.save(recipe5);
 
-        Recipe recipe6 = new Recipe("Banana Loaf", "Make loaf", "banana.jpg", 55);
+        Recipe recipe6 = new Recipe("Banana Loaf", InstructionType.BANANA_LOAF, "banana.jpg", 55);
         recipeRepository.save(recipe6);
 
         recipe1.addIngredient(egg);

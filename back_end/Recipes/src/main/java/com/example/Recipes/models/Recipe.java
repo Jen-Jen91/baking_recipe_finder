@@ -20,7 +20,7 @@ public class Recipe {
     private String name;
 
     @Column(name = "instructions")
-    private String instructions;
+    private InstructionType instructions;
 
     @Column(name = "image_url")
     private String image_url;
@@ -43,7 +43,7 @@ public class Recipe {
     )
     private List<Ingredient> ingredients;
 
-    public Recipe(String name, String instructions, String image_url, int time) {
+    public Recipe(String name, InstructionType instructions, String image_url, int time) {
         this.name = name;
         this.instructions = instructions;
         this.image_url = image_url;
@@ -63,7 +63,7 @@ public class Recipe {
     }
 
     public String getInstructions() {
-        return this.instructions;
+        return this.instructions.getValue();
     }
 
     public String getImage_url() {
@@ -86,7 +86,7 @@ public class Recipe {
         this.name = name;
     }
 
-    public void setInstructions(String instructions) {
+    public void setInstructions(InstructionType instructions) {
         this.instructions = instructions;
     }
 

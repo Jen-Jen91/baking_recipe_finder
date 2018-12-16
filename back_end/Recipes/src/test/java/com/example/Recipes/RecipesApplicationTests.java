@@ -1,6 +1,7 @@
 package com.example.Recipes;
 
 import com.example.Recipes.models.Ingredient;
+import com.example.Recipes.models.InstructionType;
 import com.example.Recipes.models.Recipe;
 import com.example.Recipes.repositories.IngredientRepository.IngredientRepository;
 import com.example.Recipes.repositories.RecipeRepository.RecipeRepository;
@@ -34,16 +35,16 @@ public class RecipesApplicationTests {
 
 	@Test
 	public void canGetRecipeName() {
-		Recipe recipe = new Recipe("Soup", "Heat soup", "soup.jpg", 2);
-		assertEquals("Soup", recipe.getName());
+		Recipe recipe = new Recipe("Nutella Brownies", InstructionType.NUTELLA_BROWNIE , "brownie.jpg", 25);
+		assertEquals("Nutella Brownies", recipe.getName());
 	}
 
 	@Test
 	public void canAddIngredientToRecipe() {
-		Ingredient ingredient = new Ingredient("chicken");
+		Ingredient ingredient = new Ingredient("nutella");
 		ingredientRepository.save(ingredient);
 
-		Recipe recipe = new Recipe("Chicken Soup", "Heat soup", "soup.jpg", 2);
+		Recipe recipe = new Recipe("Nutella Brownies", InstructionType.NUTELLA_BROWNIE , "brownie.jpg", 25);
 		recipeRepository.save(recipe);
 
 		recipe.addIngredient(ingredient);
@@ -54,16 +55,24 @@ public class RecipesApplicationTests {
 
 	@Test
 	public void canAddRecipeToIngredient() {
-		Ingredient ingredient = new Ingredient("chicken");
+		Ingredient ingredient = new Ingredient("nutella");
 		ingredientRepository.save(ingredient);
 
-		Recipe recipe = new Recipe("Chicken Soup", "Heat soup", "soup.jpg", 2);
+		Recipe recipe = new Recipe("Nutella Brownies", InstructionType.NUTELLA_BROWNIE , "brownie.jpg", 25);
 		recipeRepository.save(recipe);
 
 		ingredient.addRecipe(recipe);
 		ingredientRepository.save(ingredient);
 
 		assertEquals(1, ingredient.getRecipes().size());
+	}
+
+	@Test
+	public void canGetRecipeInstructions() {
+		Recipe recipe = new Recipe("Nutella Brownies", InstructionType.NUTELLA_BROWNIE , "brownie.jpg", 25);
+		recipeRepository.save(recipe);
+
+		assertEquals("Make brownie", recipe.getInstructions());
 	}
 
 }

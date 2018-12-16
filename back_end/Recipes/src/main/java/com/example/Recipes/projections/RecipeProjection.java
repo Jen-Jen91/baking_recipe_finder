@@ -1,6 +1,7 @@
 package com.example.Recipes.projections;
 
 import com.example.Recipes.models.Ingredient;
+import com.example.Recipes.models.InstructionType;
 import com.example.Recipes.models.Recipe;
 import org.springframework.data.rest.core.config.Projection;
 
