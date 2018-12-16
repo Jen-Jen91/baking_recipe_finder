@@ -1,6 +1,7 @@
 package com.example.Recipes.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -18,10 +19,11 @@ public class Ingredient {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnore
+    @JsonIgnoreProperties("ingredients")
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
+            name = "recipes_ingredients",
             joinColumns = {@JoinColumn(
                     name = "ingredient_id",
                     nullable = false,

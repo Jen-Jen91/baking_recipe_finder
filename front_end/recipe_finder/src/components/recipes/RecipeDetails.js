@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
 const RecipeDetails = (props) => {
 
@@ -7,7 +8,9 @@ const RecipeDetails = (props) => {
   }
 
   const ingredients = props.ingredients.map((ingredient) => {
-    return <li key={ingredient.id}>{ingredient.name}</li>
+    return <li key={ingredient.id}>
+      <Link to={'/ingredients/' + ingredient.id}>{ingredient.name}</Link>
+    </li>
   });
 
   return(

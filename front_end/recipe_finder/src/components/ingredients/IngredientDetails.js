@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const IngredientDetails = (props) => {
 
@@ -7,7 +8,9 @@ const IngredientDetails = (props) => {
   }
 
   const recipes = props.recipes.map((recipe) => {
-    return <li key={recipe.id}>{recipe.name}</li>
+    return <li key={recipe.id}>
+      <Link to={'/recipes/' + recipe.id}>{recipe.name}</Link>
+    </li>
   });
 
   return(
