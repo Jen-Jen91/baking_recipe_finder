@@ -12,7 +12,7 @@ const RecipeDetails = (props) => {
 
   return(
     <Fragment>
-      <p>{props.recipe.time}</p>
+      <p>Total Time: {props.recipe.time} minutes</p>
       <ul>{ingredients}</ul>
       <p>{props.recipe.instructions}</p>
     </Fragment>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import NavBar from './NavBar.js';
 
+import NavBar from './NavBar.js';
 import Home from './Home.js';
 import RecipeListContainer from './containers/recipes/RecipeListContainer.js';
 import IngredientListContainer from './containers/ingredients/IngredientListContainer.js';

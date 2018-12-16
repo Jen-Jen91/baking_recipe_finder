@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return(
       <Fragment>
-        <h1>Recipe Finder App - Homepage</h1>
+        <h1 className="home-title">What's In The Cupboard?</h1>
         <SearchBarContainer />
       </Fragment>
     );

@@ -12,7 +12,7 @@ const Recipe = (props) => {
       <Link to={"/recipes/" + props.recipe.id}>
         <h3>{props.recipe.name}</h3>
       </Link>
-      <p>{props.recipe.time}</p>
+      <p>Total Time: {props.recipe.time} mins</p>
       <p>{props.recipe.instructions}</p>
 
     </Fragment>

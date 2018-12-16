@@ -4,10 +4,16 @@ import {Link} from 'react-router-dom';
 const NavBar = (props) => {
   return (
     <header>
-      <ul>
-        <li className="navLink"><Link to="/">Home</Link></li>
-        <li className="navLink"><Link to="/recipes">Recipes</Link></li>
-        <li className="navLink"><Link to="/ingredients">Ingredients</Link></li>
+      <ul className="nav-list">
+        <li className="nav-item">
+          <Link to="/" className="nav-link">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/recipes" className="nav-link">Recipes</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/ingredients" className="nav-link">Ingredients</Link>
+        </li>
       </ul>
     </header>
   );
