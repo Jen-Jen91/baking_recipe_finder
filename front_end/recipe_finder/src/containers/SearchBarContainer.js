@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import SearchBar from '../components/SearchBar.js';
 
 class SearchBarContainer extends Component {
   render() {
     return(
-      <h3>SearchBarContainer</h3>
+      <Fragment>
+        <h3>SearchBarContainer</h3>
+        <SearchBar />
+      </Fragment>
     );
   }
 }

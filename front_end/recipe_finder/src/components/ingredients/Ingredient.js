@@ -9,7 +9,7 @@ const Ingredient = (props) => {
 
   return(
     <Fragment>
-      <Link to={"/ingredients/" + props.ingredient.id}>
+      <Link className="ingredient-list-link" to={"/ingredients/" + props.ingredient.id}>
         {props.ingredient.name}
       </Link>
     </Fragment>
