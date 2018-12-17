@@ -30,6 +30,9 @@ class SearchBarContainer extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    if (!this.checkIngredients(this.state.selectedIngredient)) {
+      return null;
+    }
     const id = this.checkIngredients(this.state.selectedIngredient);
     let request = new Request();
     request.get('/ingredients/' + id + '/recipes')
