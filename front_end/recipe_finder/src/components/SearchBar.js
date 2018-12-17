@@ -7,6 +7,8 @@ const SearchBar = (props) => {
   //   return ingredient.name;
   // });
 
+
+
   return(
     <Fragment>
       <h3>SearchBar</h3>
