@@ -29,6 +29,7 @@ const RecipeDetails = (props) => {
     <Fragment>
       <p>Total Time: {props.recipe.time} minutes</p>
       <ul>{ingredients}</ul>
+      <img src={props.recipe.image_url} alt={props.recipe.name} width="200" height="200"/>
       <ul>{ingredientList}</ul>
       <ul>{directionList}</ul>
     </Fragment>

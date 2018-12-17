@@ -72,7 +72,7 @@ public class RecipesApplicationTests {
 		Recipe recipe = new Recipe("Nutella Brownies", InstructionType.NUTELLA_BROWNIE , "brownie.jpg", 25);
 		recipeRepository.save(recipe);
 
-		assertEquals("Make brownie", recipe.getInstructions());
+		assertEquals("1 1/4 cup Nutella: 2 large eggs: 1/2 cup all purpose flour + Preheat oven to 350°F.: Grease a 9 inch x 9 inch metal baking pan.: Add all ingredients into a large bowl and mix until batter is smooth.: Pour into baking pan and smooth top with spatula.: Bake for about 15 minutes until toothpick inserted comes out clean. Be careful not to bake too long otherwise brownies will dry out.: Let brownies cool and set before cutting and serving.", recipe.getInstructions());
 	}
 
 }

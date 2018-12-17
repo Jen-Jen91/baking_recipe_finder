@@ -17,6 +17,7 @@ class SearchBarContainer extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkIngredients = this.checkIngredients.bind(this);
+    this.checkRecipes = this.checkRecipes.bind(this);
   }
 
   componentDidMount() {
@@ -37,8 +38,6 @@ class SearchBarContainer extends Component {
     const ingredientNames = this.state.ingredients.map((item) => {
       return item.name;
     });
-    console.log("ingredientNames", ingredientNames);
-    console.log("ingredient", ingredient);
     if (!ingredientNames.includes(ingredient)) {
       return false;
     }
@@ -55,6 +54,31 @@ class SearchBarContainer extends Component {
       .then((data) => {
         this.setState({recipes: data._embedded.recipes})
       });
+    console.log("recipes", this.state.recipes);
+    this.checkRecipes(this.state.selectedIngredients);
+  }
+
+  checkRecipes(ingredient) {
+  //   //For each recipe, get the list of ingredients
+  //   //For each ingredient list, check if it includes 'ingredient'
+  //   //If it does, return that recipe
+
+      const selectedRecipes = this.state.recipes.map((recipe) => {
+        console.log("recipe.ingredients", recipe.ingredients);
+
+        const filteredRecipes = recipe.ingredients.map((item) => {
+          console.log("item", item);
+          if (!item.name === ingredient) {
+            console.log("item.name", item.name);
+            return recipe;
+          }
+          return null;
+        })
+
+        return filteredRecipes;
+      })
+      console.log("selectedRecipes", selectedRecipes);
+  //   // this.setState({recipes: selectedRecipes});
   }
 
   render() {
@@ -74,6 +98,7 @@ class SearchBarContainer extends Component {
       </Fragment>
     );
   }
+
 }
 
 export default SearchBarContainer;

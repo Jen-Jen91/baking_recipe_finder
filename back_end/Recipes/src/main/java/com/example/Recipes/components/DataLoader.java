@@ -71,22 +71,22 @@ public class DataLoader implements ApplicationRunner {
         Ingredient banana = new Ingredient("banana");
         ingredientRepository.save(banana);
 
-        Recipe recipe1 = new Recipe("Flourless Chocolate Cake", InstructionType.FLOURLESS_CHOC_CAKE, "cake.jpg", 40);
+        Recipe recipe1 = new Recipe("Flourless Chocolate Cake", InstructionType.FLOURLESS_CHOC_CAKE, "https://www.gimmesomeoven.com/wp-content/uploads/2011/03/slice-of-flourless-chocolate-cake2.jpg", 40);
         recipeRepository.save(recipe1);
 
-        Recipe recipe2 = new Recipe("Nutella Brownie", InstructionType.NUTELLA_BROWNIE, "brownies.jpg", 30);
+        Recipe recipe2 = new Recipe("Nutella Brownie", InstructionType.NUTELLA_BROWNIE, "https://lh3.googleusercontent.com/-U0npKrmjYEg/VXzc_ZiCs-I/AAAAAAAFEg8/avq3Sy1mYBU/s800/3-ingredient-nutella-brownies-5.jpg", 30);
         recipeRepository.save(recipe2);
 
-        Recipe recipe3 = new Recipe("Peanut Butter Cookies", InstructionType.PEANUT_BUTTER_COOKIES, "cookies.jpg", 25);
+        Recipe recipe3 = new Recipe("Peanut Butter Cookies", InstructionType.PEANUT_BUTTER_COOKIES, "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/user-collections/my-colelction-image/2015/12/peanut-butter-cookies.jpg?itok=xVHkYr59", 25);
         recipeRepository.save(recipe3);
 
-        Recipe recipe4 = new Recipe("Basic Muffins", InstructionType.BASIC_MUFFINS, "muffins.jpg", 55);
+        Recipe recipe4 = new Recipe("Basic Muffins", InstructionType.BASIC_MUFFINS, "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/user-collections/my-colelction-image/2015/12/basic-muffin-recipe.jpg?itok=cEroC3pE", 55);
         recipeRepository.save(recipe4);
 
-        Recipe recipe5 = new Recipe("Classic Victoria Sandwich", InstructionType.VICTORIA_SANDWICH, "victoria.jpg", 40);
+        Recipe recipe5 = new Recipe("Classic Victoria Sandwich", InstructionType.VICTORIA_SANDWICH, "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1001468_10.jpg?itok=A_ULoxzJ", 40);
         recipeRepository.save(recipe5);
 
-        Recipe recipe6 = new Recipe("Banana Loaf", InstructionType.BANANA_LOAF, "banana.jpg", 55);
+        Recipe recipe6 = new Recipe("Banana Loaf", InstructionType.BANANA_LOAF, "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1273522_8.jpg?itok=P8cLT0gJ", 55);
         recipeRepository.save(recipe6);
 
         recipe1.addIngredient(egg);
