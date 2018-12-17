@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import SearchField from 'react-search-field';
 
 const SearchBar = (props) => {
+
+  // const ingredients = props.ingredients.map((ingredient) => {
+  //   return ingredient.name;
+  // });
+
   return(
-    <h3>SearchBar</h3>
+    <Fragment>
+      <h3>SearchBar</h3>
+      <SearchField
+        placeholder="Add your ingredients..."
+        onSearchClick={props.handleSearch}
+      />
+    </Fragment>
   );
 }
 
