@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
-import Request from '../helpers/request.js';
-import RecipeList from '../components/recipes/RecipeList.js';
+import Request from './helpers/request.js';
+import RecipeList from './components/recipes/RecipeList.js';
 
 class SearchBarContainer extends Component {
 
@@ -39,13 +39,12 @@ class SearchBarContainer extends Component {
       .then((data) => {
         this.setState({recipes: data._embedded.recipes})
       });
-    console.log("recipes", this.state.recipes);
   }
 
   checkIngredients(ingredient) {
     let id = null;
     this.state.ingredients.forEach((item) => {
-      if (item.name === ingredient) {
+      if (ingredient.includes(item.name) || item.name.includes(ingredient)) {
         id = item.id;
       }
     });
@@ -55,7 +54,6 @@ class SearchBarContainer extends Component {
   render() {
     return(
       <Fragment>
-        <h3>SearchBarContainer</h3>
         <form>
           <input
             type="text"

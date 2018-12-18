@@ -1,5 +1,9 @@
 body {
-  
+  /* background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
 }
 
 .home-title {
@@ -39,4 +43,10 @@ body {
 
 .ingredient-list-link {
   text-decoration: none;
+}
+
+/* Ingredient Details */
+
+.ingredient-title {
+  text-transform: capitalize;
 }

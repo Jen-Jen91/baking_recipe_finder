@@ -24,7 +24,7 @@ class SingleIngredientContainer extends Component {
 
     return(
       <Fragment>
-        <h3>{this.state.ingredient.name}</h3>
+        <h3 className="ingredient-title">{this.state.ingredient.name}</h3>
         <IngredientDetails
           ingredient={this.state.ingredient}
           recipes={this.state.ingredient._embedded.recipes}

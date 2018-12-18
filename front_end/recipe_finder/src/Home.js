@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import SearchBarContainer from './containers/SearchBarContainer.js';
+import SearchBarContainer from './SearchBar.js';
 
 class Home extends Component {
   render() {

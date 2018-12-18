@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
@@ -16,6 +17,23 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
     @Autowired
     EntityManager entityManager;
 
-    
+//    @Transactional
+//    public List<Recipe> getAllRecipesWithIngredients(ArrayList ingredients) {
+//        List<Recipe> results = null;
+//
+//        Session session = entityManager.unwrap(Session.class);
+//
+//        try {
+//            Criteria cr = session.createCriteria(Recipe.class);
+//            cr.add(Restrictions.in("ingredients", ingredients));
+//            results = cr.list();
+//        } catch (HibernateException ex) {
+//            ex.printStackTrace();
+//        } finally {
+//            session.close();
+//        }
+//
+//        return results;
+//    }
 
 }
