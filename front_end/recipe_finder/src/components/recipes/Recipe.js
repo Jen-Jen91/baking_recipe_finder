@@ -7,6 +7,12 @@ const Recipe = (props) => {
     return null;
   }
 
+  const ingredients = props.recipe.ingredients.map((ingredient, index) => {
+    return(
+      <li key={index}>{ingredient.name}</li>
+    );
+  });
+
   return(
     <Fragment>
       <Link to={"/recipes/" + props.recipe.id}>
@@ -16,12 +22,11 @@ const Recipe = (props) => {
         <img src={props.recipe.image_url} alt={props.recipe.name} width="200" height="200"/>
       </Link>
       <p>Total Time: {props.recipe.time} mins</p>
+      <ul>{ingredients}</ul>
 
     </Fragment>
   );
 
 }
-
-// TODO: <img src={props.recipe.image_url} alt={props.recipe.name}/>
 
 export default Recipe;

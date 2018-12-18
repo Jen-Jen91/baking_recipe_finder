@@ -3,16 +3,16 @@ import Recipe from './Recipe.js';
 
 const RecipeList = (props) => {
 
-  const recipes = props.recipes.map((recipe) => {
+  const recipes = props.recipes.map((recipe, index) => {
     return(
-      <li key={recipe.id}>
-        <Recipe recipe={recipe} />
+      <li key={index}>
+        <Recipe recipe={recipe}/>
       </li>
     );
   });
 
   return(
-    <ul>
+    <ul className="recipe-list">
       {recipes}
     </ul>
   );

@@ -8,7 +8,7 @@ class SearchBarContainer extends Component {
     super(props);
     this.state = {
       ingredients: [],
-      selectedIngredient: "",
+      selectedIngredients: [],
       recipes: []
     }
     this.handleSearch = this.handleSearch.bind(this);
@@ -25,30 +25,41 @@ class SearchBarContainer extends Component {
   }
 
   handleSearch(event) {
-    this.setState({selectedIngredient: event.target.value});
+    this.setState({selectedIngredients: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    if (!this.checkIngredients(this.state.selectedIngredient)) {
+    const ids = this.checkIngredients(this.state.selectedIngredients);
+    if (!ids) {
       return null;
     }
-    const id = this.checkIngredients(this.state.selectedIngredient);
+
+    console.log("state", this.state.recipes);
     let request = new Request();
-    request.get('/ingredients/' + id + '/recipes')
-      .then((data) => {
-        this.setState({recipes: data._embedded.recipes})
-      });
+    let recipeData = [];
+
+    ids.forEach((id) => {
+      request.get('/ingredients/' + id + '/recipes')
+        .then((data) => {
+          data._embedded.recipes.forEach((item) => {
+            if (!recipeData.includes(item)) {
+              recipeData.push(item);
+            }
+            this.setState({recipes: recipeData});
+          });
+        });
+    });
   }
 
   checkIngredients(ingredient) {
-    let id = null;
+    let ids = [];
     this.state.ingredients.forEach((item) => {
       if (ingredient.includes(item.name) || item.name.includes(ingredient)) {
-        id = item.id;
+        ids.push(item.id);
       }
     });
-    return id;
+    return ids;
   }
 
   render() {
@@ -58,12 +69,12 @@ class SearchBarContainer extends Component {
           <input
             type="text"
             placeholder="Add your ingredients..."
-            value={this.state.selectedIngredient}
+            value={this.state.selectedIngredients}
             onChange={this.handleSearch}
           />
           <button onClick={this.handleSubmit}>Search</button>
         </form>
-        <RecipeList recipes={this.state.recipes} />
+        <RecipeList recipes={this.state.recipes}/>
       </Fragment>
     );
   }

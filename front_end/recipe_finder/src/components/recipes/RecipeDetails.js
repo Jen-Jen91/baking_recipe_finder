@@ -28,10 +28,11 @@ const RecipeDetails = (props) => {
   return(
     <Fragment>
       <p>Total Time: {props.recipe.time} minutes</p>
-      <ul>{ingredients}</ul>
+      <ul>Ingredients: {ingredients}</ul>
       <img src={props.recipe.image_url} alt={props.recipe.name} width="200" height="200"/>
+      <h3>Method</h3>
       <ul>{ingredientList}</ul>
-      <ul>{directionList}</ul>
+      <ol>{directionList}</ol>
     </Fragment>
   );
 
