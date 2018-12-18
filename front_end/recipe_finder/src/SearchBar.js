@@ -35,17 +35,19 @@ class SearchBarContainer extends Component {
       return null;
     }
 
-    console.log("state", this.state.recipes);
     let request = new Request();
-    let recipeData = [];
+    var recipeData = [];
 
     ids.forEach((id) => {
       request.get('/ingredients/' + id + '/recipes')
         .then((data) => {
           data._embedded.recipes.forEach((item) => {
-            if (!recipeData.includes(item)) {
-              recipeData.push(item);
-            }
+            recipeData.forEach((recipe, index) => {
+              if (recipe.name === item.name) {
+                recipeData.splice(index, 1);
+              }
+            });
+            recipeData.push(item);
             this.setState({recipes: recipeData});
           });
         });
