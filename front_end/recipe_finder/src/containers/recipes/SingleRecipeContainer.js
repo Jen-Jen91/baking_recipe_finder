@@ -22,24 +22,22 @@ class SingleRecipeContainer extends Component {
 
   handleSave() {
     let recipeCopy = JSON.parse(JSON.stringify(this.state.recipe));
-
-    //If favourite on this.state.recipe is false:
-    //Set copy.favourite to true
-    //Set copy recipe as new state
-    //Disable button
-    //Update recipe in database with state
-
     if (this.state.recipe.favourite === false) {
       recipeCopy.favourite = true;
       this.setState({recipe: recipeCopy}, () => this.patchFavourite());
       document.getElementById("save-button").disabled = true;
+      document.getElementById("unsave-button").disabled = false;
     }
+  }
 
-    // let request = new Request();
-    // request.patch('/recipes/' + this.props.id, this.state.recipe)
-    //   .then(() => {
-    //     console.log("PATCH GONE THROUGH");
-    //   });
+  handleUnsave() {
+    let recipeCopy = JSON.parse(JSON.stringify(this.state.recipe));
+    if (this.state.recipe.favourite === true) {
+      recipeCopy.favourite = false;
+      document.getElementById("unsave-button").disabled = true;
+      document.getElementById("save-button").disabled = false;
+      this.setState({recipe: recipeCopy}, () => this.patchFavourite());
+    }
   }
 
   patchFavourite() {
@@ -48,22 +46,6 @@ class SingleRecipeContainer extends Component {
       .then(() => {
         console.log("PATCH GONE THROUGH");
       });
-  }
-
-  handleUnsave() {
-    let recipeCopy = JSON.parse(JSON.stringify(this.state.recipe));
-
-    if (this.state.recipe.favourite === true) {
-      recipeCopy.favourite = false;
-      document.getElementById("unsave-button").disabled = true;
-      this.setState({recipe: recipeCopy}, () => this.patchFavourite());
-    }
-
-    // let request = new Request();
-    // request.patch('/recipes/' + this.props.id, this.state.recipe)
-    //   .then(() => {
-    //
-    //   });
   }
 
   render() {
