@@ -13,5 +13,6 @@ public interface RecipeProjection {
     String getInstructions();
     String getImage_url();
     int getTime();
+    boolean isFavourite();
     List<Ingredient> getIngredients();
 }

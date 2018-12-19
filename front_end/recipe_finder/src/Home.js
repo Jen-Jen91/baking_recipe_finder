@@ -1,12 +1,14 @@
 import React, {Component, Fragment} from 'react';
-import SearchBarContainer from './SearchBar.js';
+import SearchBar from './SearchBar.js';
 
 class Home extends Component {
   render() {
     return(
       <Fragment>
-        <h1 className="home-title">What's In The Cupboard?</h1>
-        <SearchBarContainer />
+        <div className="home-title-div">
+          <h1 className="home-title">What's In The Cupboard?</h1>
+        </div>
+        <SearchBar />
       </Fragment>
     );
   }

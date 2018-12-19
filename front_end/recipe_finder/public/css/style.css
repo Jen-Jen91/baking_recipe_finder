@@ -1,13 +1,45 @@
 body {
-  /* background-image: url("/images/background.jpg");
-  background-size: cover;
+  background-image: url("/images/background.jpg");
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; */
+  background-attachment: fixed;
+}
+
+.home-title-div {
+  text-align: center;
 }
 
 .home-title {
+  background-color: rgb(254, 254, 254, 0.75);
+  width: 800px;
+  font-size: 4em;
+  display: inline-block;
+}
+
+/* Search Bar */
+
+.search-bar-form {
+  /* background-color: red; */
   text-align: center;
+}
+
+.search-bar-input {
+  /* background-color: blue; */
+  border: black solid 2px;
+  padding: 2px 10px;
+  width: 300px;
+  font-size: 1.5em;
+}
+
+.search-bar-button {
+  /* color: red;
+  background-color: blue; */
+  border: black solid 2px;
+  border-radius: 25px;
+  font-size: 1.5em;
+  padding: 2px 10px;
+  margin-left: 10px;
 }
 
 /* Nav Bar */
@@ -15,6 +47,8 @@ body {
 .nav-list {
   text-align: center;
   list-style-type: none;
+  background-color: rgb(254, 254, 254, 0.75);
+  border: red solid 2px;
 }
 
 .nav-item {
@@ -25,24 +59,37 @@ body {
 .nav-link {
   text-decoration: none;
   font-weight: bold;
-  border: 1px solid black;
-  border-radius: 25px;
+  font-size: 1.25em;
+  color: red;
+  /* border: 1px solid black;
+  border-radius: 25px; */
   padding: 3px 10px;
 }
 
 /* Ingredient List */
 
-.ingredient-list {
+.ingredient-list-div {
+  /* text-align: center; */
+}
 
+.ingredient-list {
+  width: 300px;
+  display: inline-block;
+  list-style-type: none;
+  /* background-color: rgb(254, 254, 254, 0.75); */
 }
 
 .ingredient-list-item {
   text-transform: capitalize;
-  list-style-position: outside;
+  /* background-color: rgb(254, 254, 254, 0.75); */
+  margin: 10px;
 }
 
 .ingredient-list-link {
   text-decoration: none;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: black;
 }
 
 /* Ingredient Details */

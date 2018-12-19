@@ -20,21 +20,42 @@ class SingleRecipeContainer extends Component {
   }
 
   handleSave() {
-    console.log("recipe", this.state.recipe);
+    let recipeCopy = JSON.parse(JSON.stringify(this.state.recipe));
+
+    if (this.state.recipe.favourite === false) {
+      recipeCopy.favourite = true;
+      console.log("SAVE", recipeCopy);
+      document.getElementById("save-button").disabled = true;
+      this.setState({recipe: recipeCopy});
+    }
+
+    // this.setState({recipe: recipeCopy});
+
     let request = new Request();
-    request.post('/savedRecipes', this.state.recipe)
+    request.patch('/recipes/' + this.props.id, this.state.recipe)
       .then(() => {
-        // const button = document.getElementsByClassName("save-button");
-        // button.disabled = true;
+        console.log("SAVE2", this.state.recipe);
+        // document.getElementById("save-button").disabled = true;
       });
   }
 
   handleUnsave() {
+    let recipeCopy = JSON.parse(JSON.stringify(this.state.recipe));
+
+    if (this.state.recipe.favourite === true) {
+      recipeCopy.favourite = false;
+      console.log("UNSAVE", recipeCopy);
+      document.getElementById("unsave-button").disabled = true;
+      this.setState({recipe: recipeCopy});
+    }
+
+    // this.setState({recipe: recipeCopy});
+
     let request = new Request();
-    request.delete('/savedRecipes/' + this.props.id)
-      .then((data) => {
-        const button = document.getElementsByClassName("save-button");
-        button.disabled = true;
+    request.patch('/recipes/' + this.props.id, this.state.recipe)
+      .then(() => {
+        console.log("UNSAVE2", this.state.recipe);
+        // document.getElementById("unsave-button").disabled = true;
       });
   }
 
@@ -46,8 +67,8 @@ class SingleRecipeContainer extends Component {
     return(
       <Fragment>
         <h3>{this.state.recipe.name}</h3>
-        <button className="save-button" onClick={this.handleSave}>Save</button>
-        <button className="unsave-button" onClick={this.handleUnsave}>Unsave</button>
+        <button id="save-button" onClick={this.handleSave}>Save</button>
+        <button id="unsave-button" onClick={this.handleUnsave}>Unsave</button>
         <RecipeDetails
           recipe={this.state.recipe}
           ingredients={this.state.recipe._embedded.ingredients}

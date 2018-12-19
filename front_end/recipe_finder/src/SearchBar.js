@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Request from './helpers/request.js';
 import RecipeList from './components/recipes/RecipeList.js';
 
-class SearchBarContainer extends Component {
+class SearchBar extends Component {
 
   constructor(props) {
     super(props);
@@ -69,14 +69,18 @@ class SearchBarContainer extends Component {
   render() {
     return(
       <Fragment>
-        <form>
+        <form className="search-bar-form">
           <input
             type="text"
             placeholder="Add your ingredients..."
             value={this.state.selectedIngredients}
             onChange={this.handleSearch}
+            className="search-bar-input"
           />
-          <button onClick={this.handleSubmit}>Search</button>
+          <button
+            onClick={this.handleSubmit}
+            className="search-bar-button"
+          >Search</button>
         </form>
         <RecipeList recipes={this.state.recipes}/>
       </Fragment>
@@ -85,4 +89,4 @@ class SearchBarContainer extends Component {
 
 }
 
-export default SearchBarContainer;
+export default SearchBar;

@@ -74,12 +74,5 @@ public class RecipesApplicationTests {
 		assertEquals("Make brownies", recipe.getInstructions());
 	}
 
-//	@Test
-//	public void canGetAllRecipesWithIngredients() {
-//		ArrayList<String> ingredients = new ArrayList<>();
-//		ingredients.add("nutella");
-//		List<Recipe> results = recipeRepository.getAllRecipesWithIngredients(ingredients);
-//	}
-
 }
 

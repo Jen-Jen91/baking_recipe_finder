@@ -30,6 +30,9 @@ public class Recipe {
     @Column(name = "likes")
     private int likes;
 
+    @Column(name = "favourite")
+    private boolean favourite;
+
     @JsonIgnoreProperties("recipes")
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -51,6 +54,7 @@ public class Recipe {
         this.image_url = image_url;
         this.time = time;
         this.likes = likes;
+        this.favourite = false;
         this.ingredients = new ArrayList<>();
     }
 
@@ -79,6 +83,10 @@ public class Recipe {
 
     public int getLikes() {
         return likes;
+    }
+
+    public boolean isFavourite() {
+        return this.favourite;
     }
 
     public List<Ingredient> getIngredients() {
@@ -111,6 +119,10 @@ public class Recipe {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
     }
 
     public void addIngredient(Ingredient ingredient) {
