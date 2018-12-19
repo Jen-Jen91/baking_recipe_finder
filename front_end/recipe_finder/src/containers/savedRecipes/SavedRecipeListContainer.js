@@ -14,7 +14,6 @@ class SavedRecipeListContainer extends Component {
     request.get('/recipes')
       .then((data) => {
         const savedRecipesOnly = data._embedded.recipes.filter((recipe) => {
-          console.log("recipe", recipe);
           return recipe.favourite === true;
         });
         this.setState({savedRecipes: savedRecipesOnly})

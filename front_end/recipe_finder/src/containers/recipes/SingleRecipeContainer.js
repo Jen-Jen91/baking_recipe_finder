@@ -9,6 +9,7 @@ class SingleRecipeContainer extends Component {
     this.state = {recipe: null}
     this.handleSave = this.handleSave.bind(this);
     this.handleUnsave = this.handleUnsave.bind(this);
+    this.patchFavourite = this.patchFavourite.bind(this);
   }
 
   componentDidMount() {
@@ -22,20 +23,30 @@ class SingleRecipeContainer extends Component {
   handleSave() {
     let recipeCopy = JSON.parse(JSON.stringify(this.state.recipe));
 
+    //If favourite on this.state.recipe is false:
+    //Set copy.favourite to true
+    //Set copy recipe as new state
+    //Disable button
+    //Update recipe in database with state
+
     if (this.state.recipe.favourite === false) {
       recipeCopy.favourite = true;
-      console.log("SAVE", recipeCopy);
+      this.setState({recipe: recipeCopy}, () => this.patchFavourite());
       document.getElementById("save-button").disabled = true;
-      this.setState({recipe: recipeCopy});
     }
 
-    // this.setState({recipe: recipeCopy});
+    // let request = new Request();
+    // request.patch('/recipes/' + this.props.id, this.state.recipe)
+    //   .then(() => {
+    //     console.log("PATCH GONE THROUGH");
+    //   });
+  }
 
+  patchFavourite() {
     let request = new Request();
     request.patch('/recipes/' + this.props.id, this.state.recipe)
       .then(() => {
-        console.log("SAVE2", this.state.recipe);
-        // document.getElementById("save-button").disabled = true;
+        console.log("PATCH GONE THROUGH");
       });
   }
 
@@ -44,19 +55,15 @@ class SingleRecipeContainer extends Component {
 
     if (this.state.recipe.favourite === true) {
       recipeCopy.favourite = false;
-      console.log("UNSAVE", recipeCopy);
       document.getElementById("unsave-button").disabled = true;
-      this.setState({recipe: recipeCopy});
+      this.setState({recipe: recipeCopy}, () => this.patchFavourite());
     }
 
-    // this.setState({recipe: recipeCopy});
-
-    let request = new Request();
-    request.patch('/recipes/' + this.props.id, this.state.recipe)
-      .then(() => {
-        console.log("UNSAVE2", this.state.recipe);
-        // document.getElementById("unsave-button").disabled = true;
-      });
+    // let request = new Request();
+    // request.patch('/recipes/' + this.props.id, this.state.recipe)
+    //   .then(() => {
+    //
+    //   });
   }
 
   render() {
@@ -66,9 +73,9 @@ class SingleRecipeContainer extends Component {
 
     return(
       <Fragment>
-        <h3>{this.state.recipe.name}</h3>
-        <button id="save-button" onClick={this.handleSave}>Save</button>
-        <button id="unsave-button" onClick={this.handleUnsave}>Unsave</button>
+        <h2>{this.state.recipe.name}</h2>
+        <button id="save-button" onClick={this.handleSave}>Add To Favourites</button>
+        <button id="unsave-button" onClick={this.handleUnsave}>Remove From Favourites</button>
         <RecipeDetails
           recipe={this.state.recipe}
           ingredients={this.state.recipe._embedded.ingredients}

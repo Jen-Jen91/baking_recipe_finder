@@ -48,7 +48,7 @@ body {
   text-align: center;
   list-style-type: none;
   background-color: rgb(254, 254, 254, 0.75);
-  border: red solid 2px;
+  border: #cc0000 solid 2px;
 }
 
 .nav-item {
@@ -60,7 +60,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.25em;
-  color: red;
+  color: #cc0000;
   /* border: 1px solid black;
   border-radius: 25px; */
   padding: 3px 10px;
@@ -103,4 +103,22 @@ body {
   /*the container must be positioned relative:*/
   position: relative;
   display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+.recipe-ingredient-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ingredient-recipe-link {
+  text-decoration: none;
+  color: inherit;
 }

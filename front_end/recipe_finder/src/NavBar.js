@@ -15,7 +15,7 @@ const NavBar = (props) => {
           <Link to="/ingredients" className="nav-link">Ingredients</Link>
         </li>
         <li className="nav-item">
-          <Link to="/savedRecipes" className="nav-link">Saved Recipes</Link>
+          <Link to="/savedRecipes" className="nav-link">Favourite Recipes</Link>
         </li>
       </ul>
     </header>

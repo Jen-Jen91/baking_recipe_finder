@@ -9,7 +9,7 @@ const IngredientDetails = (props) => {
 
   const recipes = props.recipes.map((recipe) => {
     return <li key={recipe.id}>
-      <Link className="ingredient-details-recipe-link" to={'/recipes/' + recipe.id}>{recipe.name}</Link>
+      <Link className="ingredient-recipe-link" to={'/recipes/' + recipe.id}>{recipe.name}</Link>
     </li>
   });
 

@@ -9,7 +9,7 @@ const RecipeDetails = (props) => {
 
   const ingredients = props.ingredients.map((ingredient) => {
     return <li key={ingredient.id}>
-      <Link to={'/ingredients/' + ingredient.id}>{ingredient.name}</Link>
+      <Link className="recipe-ingredient-link" to={'/ingredients/' + ingredient.id}>{ingredient.name}</Link>
     </li>
   });
 
@@ -27,8 +27,10 @@ const RecipeDetails = (props) => {
 
   return(
     <Fragment>
+      <p>Favourite? {props.recipe.favourite.toString()}</p>
       <p>Total Time: {props.recipe.time} minutes</p>
-      <ul>Ingredients: {ingredients}</ul>
+      <p>Ingredients:</p>
+      <ul>{ingredients}</ul>
       <img src={props.recipe.image_url} alt={props.recipe.name} width="200" height="200"/>
       <h3>Method</h3>
       <ul>{ingredientList}</ul>

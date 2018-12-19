@@ -74,5 +74,15 @@ public class RecipesApplicationTests {
 		assertEquals("Make brownies", recipe.getInstructions());
 	}
 
+	@Test
+	public void canSetFavourite() {
+		Recipe recipe = new Recipe("Nutella Brownies", "Make brownies" , "brownie.jpg", 25, 0);
+		recipeRepository.save(recipe);
+
+		recipe.setFavourite(true);
+
+		assertEquals(true, recipe.isFavourite());
+	}
+
 }
 
