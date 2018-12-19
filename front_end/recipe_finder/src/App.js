@@ -5,6 +5,7 @@ import NavBar from './NavBar.js';
 import Home from './Home.js';
 import RecipeListContainer from './containers/recipes/RecipeListContainer.js';
 import IngredientListContainer from './containers/ingredients/IngredientListContainer.js';
+import SavedRecipeListContainer from './containers/savedRecipes/SavedRecipeListContainer.js';
 
 import SingleRecipeContainer from './containers/recipes/SingleRecipeContainer.js';
 import SingleIngredientContainer from './containers/ingredients/SingleIngredientContainer.js';
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/recipes" component={RecipeListContainer}/>
             <Route exact path="/ingredients" component={IngredientListContainer}/>
+            <Route exact path="/savedRecipes" component={SavedRecipeListContainer}/>
             <Route exact path="/recipes/:id"
               render = {(props) => {
                 const id = props.match.params.id;

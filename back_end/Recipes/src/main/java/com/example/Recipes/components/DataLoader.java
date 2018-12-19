@@ -1,7 +1,6 @@
 package com.example.Recipes.components;
 
 import com.example.Recipes.models.Ingredient;
-import com.example.Recipes.models.InstructionType;
 import com.example.Recipes.models.Recipe;
 import com.example.Recipes.repositories.IngredientRepository.IngredientRepository;
 import com.example.Recipes.repositories.RecipeRepository.RecipeRepository;
@@ -132,73 +131,6 @@ public class DataLoader implements ApplicationRunner {
         recipe6.addIngredient(banana);
         recipe6.addIngredient(icingSugar);
         recipeRepository.save(recipe6);
-
-//        egg.addRecipe(recipe1);
-//        egg.addRecipe(recipe2);
-//        egg.addRecipe(recipe3);
-//        egg.addRecipe(recipe4);
-//        egg.addRecipe(recipe5);
-//        egg.addRecipe(recipe6);
-//        ingredientRepository.save(egg);
-//
-//        darkChocolate.addRecipe(recipe1);
-//        ingredientRepository.save(darkChocolate);
-//
-//        unsaltedButter.addRecipe(recipe1);
-//        unsaltedButter.addRecipe(recipe5);
-//        unsaltedButter.addRecipe(recipe6);
-//        ingredientRepository.save(unsaltedButter);
-//
-//        nutella.addRecipe(recipe2);
-//        ingredientRepository.save(nutella);
-//
-//        sRFlour.addRecipe(recipe2);
-//        sRFlour.addRecipe(recipe4);
-//        sRFlour.addRecipe(recipe5);
-//        sRFlour.addRecipe(recipe6);
-//        ingredientRepository.save(sRFlour);
-//
-//        casterSugar.addRecipe(recipe5);
-//        casterSugar.addRecipe(recipe6);
-//        ingredientRepository.save(casterSugar);
-//
-//        icingSugar.addRecipe(recipe5);
-//        icingSugar.addRecipe(recipe6);
-//        ingredientRepository.save(icingSugar);
-//
-//        goldenCasterSugar.addRecipe(recipe3);
-//        goldenCasterSugar.addRecipe(recipe4);
-//        ingredientRepository.save(goldenCasterSugar);
-//
-//        peanutButter.addRecipe(recipe3);
-//        ingredientRepository.save(peanutButter);
-//
-//        vegOil.addRecipe(recipe4);
-//        ingredientRepository.save(vegOil);
-//
-//        milk.addRecipe(recipe4);
-//        milk.addRecipe(recipe5);
-//        ingredientRepository.save(milk);
-//
-//        sRFlour.addRecipe(recipe4);
-//        ingredientRepository.save(sRFlour);
-//
-//        salt.addRecipe(recipe3);
-//        salt.addRecipe(recipe4);
-//        ingredientRepository.save(salt);
-//
-//        bakingPowder.addRecipe(recipe5);
-//        bakingPowder.addRecipe(recipe6);
-//        ingredientRepository.save(bakingPowder);
-//
-//        vanilla.addRecipe(recipe5);
-//        ingredientRepository.save(vanilla);
-//
-//        strawJam.addRecipe(recipe5);
-//        ingredientRepository.save(strawJam);
-//
-//        banana.addRecipe(recipe6);
-//        ingredientRepository.save(banana);
 
     }
 

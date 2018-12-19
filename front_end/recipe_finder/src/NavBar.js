@@ -14,6 +14,9 @@ const NavBar = (props) => {
         <li className="nav-item">
           <Link to="/ingredients" className="nav-link">Ingredients</Link>
         </li>
+        <li className="nav-item">
+          <Link to="/savedRecipes" className="nav-link">Saved Recipes</Link>
+        </li>
       </ul>
     </header>
   );
