@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,9 +17,9 @@ public class RecipeController {
     @Autowired
     RecipeRepository recipeRepository;
 
-//    @GetMapping(value = "/{ingredients}")
-//    public List<Recipe> getAllRecipesWithIngredients(@PathVariable ArrayList ingredients) {
-//        return recipeRepository.getAllRecipesWithIngredients(ingredients);
+//    @GetMapping(value = "/{name}")
+//    public List<Recipe> getRecipeWithName(@PathVariable String name) {
+//        return recipeRepository.getRecipeWithName(name);
 //    }
 
 }

@@ -27,7 +27,6 @@ const RecipeDetails = (props) => {
 
   return(
     <Fragment>
-      
       <p>Total Time: {props.recipe.time} minutes</p>
       <ul>Ingredients: {ingredients}</ul>
       <img src={props.recipe.image_url} alt={props.recipe.name} width="200" height="200"/>
@@ -38,7 +37,5 @@ const RecipeDetails = (props) => {
   );
 
 }
-
-// TODO: <img src={props.recipe.image_url} alt={props.recipe.name}/>
 
 export default RecipeDetails;

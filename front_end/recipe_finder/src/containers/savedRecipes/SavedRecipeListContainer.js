@@ -14,12 +14,6 @@ class SavedRecipeListContainer extends Component {
     request.get('/savedRecipes')
       .then((data) => {
         this.setState({savedRecipes: data._embedded.savedRecipes})
-      })
-      .catch((data) => {
-        if (!data) {
-          console.log("No data");
-          return null;
-        }
       });
   }
 

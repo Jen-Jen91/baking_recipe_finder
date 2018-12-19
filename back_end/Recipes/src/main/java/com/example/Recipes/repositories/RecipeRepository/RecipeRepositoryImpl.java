@@ -17,23 +17,23 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
     @Autowired
     EntityManager entityManager;
 
-//    @Transactional
-//    public List<Recipe> getAllRecipesWithIngredients(ArrayList ingredients) {
-//        List<Recipe> results = null;
-//
-//        Session session = entityManager.unwrap(Session.class);
-//
-//        try {
-//            Criteria cr = session.createCriteria(Recipe.class);
-//            cr.add(Restrictions.in("ingredients", ingredients));
-//            results = cr.list();
-//        } catch (HibernateException ex) {
-//            ex.printStackTrace();
-//        } finally {
-//            session.close();
-//        }
-//
-//        return results;
-//    }
+    @Transactional
+    public List<Recipe> getRecipeWithName(String name) {
+        List<Recipe> results = null;
+
+        Session session = entityManager.unwrap(Session.class);
+
+        try {
+            Criteria cr = session.createCriteria(Recipe.class);
+            cr.add(Restrictions.eq("name", name));
+            results = cr.list();
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return results;
+    }
 
 }

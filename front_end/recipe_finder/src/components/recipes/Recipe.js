@@ -29,6 +29,4 @@ const Recipe = (props) => {
 
 }
 
-// TODO: <img src={props.recipe.image_url} alt={props.recipe.name}/>
-
 export default Recipe;
