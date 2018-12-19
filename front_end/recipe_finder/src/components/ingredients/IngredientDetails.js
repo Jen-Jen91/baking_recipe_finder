@@ -14,7 +14,9 @@ const IngredientDetails = (props) => {
   });
 
   return(
-    <ul>{recipes}</ul>
+    <div className="ingredient-recipe-div">
+      <ul className="ingredient-recipe-list">{recipes}</ul>
+    </div>
   );
 
 }

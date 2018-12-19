@@ -43,9 +43,7 @@ class SingleRecipeContainer extends Component {
   patchFavourite() {
     let request = new Request();
     request.patch('/recipes/' + this.props.id, this.state.recipe)
-      .then(() => {
-        console.log("PATCH GONE THROUGH");
-      });
+      .then(() => {});
   }
 
   render() {
@@ -55,7 +53,7 @@ class SingleRecipeContainer extends Component {
 
     return(
       <Fragment>
-        <h2>{this.state.recipe.name}</h2>
+        <h2 className="recipe-name">{this.state.recipe.name}</h2>
         <button id="save-button" onClick={this.handleSave}>Add To Favourites</button>
         <button id="unsave-button" onClick={this.handleUnsave}>Remove From Favourites</button>
         <RecipeDetails

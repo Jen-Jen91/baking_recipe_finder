@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Recipe = (props) => {
@@ -14,8 +14,8 @@ const Recipe = (props) => {
   });
 
   return(
-    <Fragment>
-      <Link to={"/recipes/" + props.recipe.id}>
+    <div className="recipe">
+      <Link className="recipe-link" to={"/recipes/" + props.recipe.id}>
         <h3>{props.recipe.name}</h3>
       </Link>
       <Link to={"/recipes/" + props.recipe.id}>
@@ -23,8 +23,7 @@ const Recipe = (props) => {
       </Link>
       <p>Total Time: {props.recipe.time} mins</p>
       <ul>{ingredients}</ul>
-
-    </Fragment>
+    </div>
   );
 
 }

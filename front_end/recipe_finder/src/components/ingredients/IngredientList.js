@@ -12,11 +12,9 @@ const IngredientList = (props) => {
   });
 
   return(
-    <div className="ingredient-list-div">
-      <ul className="ingredient-list">
+    <ul className="ingredient-list">
         {ingredients}
-      </ul>
-    </div>
+    </ul>
   );
 
 }

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 const RecipeDetails = (props) => {
@@ -26,16 +26,17 @@ const RecipeDetails = (props) => {
   });
 
   return(
-    <Fragment>
-      <p>Favourite? {props.recipe.favourite.toString()}</p>
+    <div className="recipe-details-div">
       <p>Total Time: {props.recipe.time} minutes</p>
       <p>Ingredients:</p>
       <ul>{ingredients}</ul>
       <img src={props.recipe.image_url} alt={props.recipe.name} width="200" height="200"/>
-      <h3>Method</h3>
-      <ul>{ingredientList}</ul>
-      <ol>{directionList}</ol>
-    </Fragment>
+      <div className="instructions">
+        <h3>Method</h3>
+        <ul>{ingredientList}</ul>
+        <ol className="directions">{directionList}</ol>
+      </div>
+    </div>
   );
 
 }
