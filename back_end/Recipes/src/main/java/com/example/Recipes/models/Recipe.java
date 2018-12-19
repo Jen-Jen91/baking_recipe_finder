@@ -1,6 +1,5 @@
 package com.example.Recipes.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -19,14 +18,17 @@ public class Recipe {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "instructions")
-    private InstructionType instructions;
+    @Column(name = "instructions", columnDefinition = "TEXT")
+    private String instructions;
 
     @Column(name = "image_url")
     private String image_url;
 
     @Column(name = "time")
     private int time;
+
+    @Column(name = "likes")
+    private int likes;
 
     @JsonIgnoreProperties("recipes")
     @ManyToMany
@@ -43,11 +45,12 @@ public class Recipe {
     )
     private List<Ingredient> ingredients;
 
-    public Recipe(String name, InstructionType instructions, String image_url, int time) {
+    public Recipe(String name, String instructions, String image_url, int time, int likes) {
         this.name = name;
         this.instructions = instructions;
         this.image_url = image_url;
         this.time = time;
+        this.likes = likes;
         this.ingredients = new ArrayList<>();
     }
 
@@ -63,7 +66,7 @@ public class Recipe {
     }
 
     public String getInstructions() {
-        return this.instructions.getValue();
+        return this.instructions;
     }
 
     public String getImage_url() {
@@ -72,6 +75,10 @@ public class Recipe {
 
     public int getTime() {
         return this.time;
+    }
+
+    public int getLikes() {
+        return likes;
     }
 
     public List<Ingredient> getIngredients() {
@@ -86,7 +93,7 @@ public class Recipe {
         this.name = name;
     }
 
-    public void setInstructions(InstructionType instructions) {
+    public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
 
@@ -100,6 +107,10 @@ public class Recipe {
 
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public void addIngredient(Ingredient ingredient) {

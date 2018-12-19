@@ -25,7 +25,7 @@ class SearchBarContainer extends Component {
   }
 
   handleSearch(event) {
-    this.setState({selectedIngredients: event.target.value});
+    this.setState({selectedIngredients: event.target.value.toLowerCase()});
   }
 
   handleSubmit(event) {
@@ -42,11 +42,13 @@ class SearchBarContainer extends Component {
       request.get('/ingredients/' + id + '/recipes')
         .then((data) => {
           data._embedded.recipes.forEach((item) => {
+
             recipeData.forEach((recipe, index) => {
               if (recipe.name === item.name) {
                 recipeData.splice(index, 1);
               }
             });
+
             recipeData.push(item);
             this.setState({recipes: recipeData});
           });

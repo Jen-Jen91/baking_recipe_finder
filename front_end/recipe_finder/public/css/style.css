@@ -50,3 +50,10 @@ body {
 .ingredient-title {
   text-transform: capitalize;
 }
+
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}

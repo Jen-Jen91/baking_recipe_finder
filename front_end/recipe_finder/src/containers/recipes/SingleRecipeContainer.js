@@ -25,6 +25,8 @@ class SingleRecipeContainer extends Component {
     return(
       <Fragment>
         <h3>{this.state.recipe.name}</h3>
+        <p>Likes: {this.state.recipe.likes}</p>
+        <button>Like!</button>
         <RecipeDetails
           recipe={this.state.recipe}
           ingredients={this.state.recipe._embedded.ingredients}
