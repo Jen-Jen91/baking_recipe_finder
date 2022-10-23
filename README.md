@@ -5,10 +5,12 @@ For this solo project, I created a full-stack web app that allows users to searc
 ### To run the app:
 
 1) Back-end:
-    * Run the 'RecipesApplication' file in IntelliJ (keep this running)
+    * Build the back-end of the project in an IDE, like IntelliJ
+    * Run the 'RecipesApplication' file (keep this running)
     * View the API on http://localhost:8080/
 2) Front-end:
-    * In the terminal, enter *npm start* (keep this running)
+    * In the terminal, enter *npm install* to update node_modules
+    * Run *npm start* (keep this running)
     * View the app on http://localhost:3000
 
 
